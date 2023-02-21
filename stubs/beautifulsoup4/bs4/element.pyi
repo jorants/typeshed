@@ -1,7 +1,7 @@
 from _typeshed import Incomplete
 from collections.abc import Callable, Iterable, Iterator
 from re import Pattern
-from typing import Any, Generic, TypeVar, overload
+from typing import Generic, TypeVar, overload
 from typing_extensions import Self, TypeAlias
 
 from . import BeautifulSoup
@@ -321,7 +321,7 @@ class Tag(PageElement):
         string: _Strainable | None = ...,
         limit: int | None = ...,
         **kwargs: _Strainable,
-    ) -> ResultSet[Any]: ...
+    ) -> ResultSet[PageElement]: ...
     __call__ = find_all
     findAll = find_all
     findChildren = find_all
