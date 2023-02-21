@@ -75,7 +75,7 @@ class PageElement:
         attrs: dict[str, _Strainable] | _Strainable = ...,
         string: _Strainable | None = ...,
         **kwargs: _Strainable,
-    ) -> Tag | NavigableString | None: ...
+    ) -> PageElement | None: ...
     findNext = find_next
     def find_all_next(
         self,
@@ -92,7 +92,7 @@ class PageElement:
         attrs: dict[str, _Strainable] | _Strainable = ...,
         string: _Strainable | None = ...,
         **kwargs: _Strainable,
-    ) -> Tag | NavigableString | None: ...
+    ) -> PageElement | None: ...
     findNextSibling = find_next_sibling
     def find_next_siblings(
         self,
@@ -110,7 +110,7 @@ class PageElement:
         attrs: dict[str, _Strainable] | _Strainable = ...,
         string: _Strainable | None = ...,
         **kwargs: _Strainable,
-    ) -> Tag | NavigableString | None: ...
+    ) -> PageElement | None: ...
     findPrevious = find_previous
     def find_all_previous(
         self,
@@ -128,7 +128,7 @@ class PageElement:
         attrs: dict[str, _Strainable] | _Strainable = ...,
         string: _Strainable | None = ...,
         **kwargs: _Strainable,
-    ) -> Tag | NavigableString | None: ...
+    ) -> PageElement | None: ...
     findPreviousSibling = find_previous_sibling
     def find_previous_siblings(
         self,
@@ -157,9 +157,9 @@ class PageElement:
     findParents = find_parents
     fetchParents = find_parents
     @property
-    def next(self) -> Tag | NavigableString | None: ...
+    def next(self) -> PageElement | None: ...
     @property
-    def previous(self) -> Tag | NavigableString | None: ...
+    def previous(self) -> PageElement | None: ...
     @property
     def next_elements(self) -> Iterable[PageElement]: ...
     @property
@@ -311,7 +311,7 @@ class Tag(PageElement):
         recursive: bool = ...,
         string: _Strainable | None = ...,
         **kwargs: _Strainable,
-    ) -> Tag | NavigableString | None: ...
+    ) -> PageElement | None: ...
     findChild = find
     def find_all(
         self,
